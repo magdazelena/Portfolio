@@ -1,0 +1,7 @@
+@import './settings/font';
+@import './settings/variables';
+
+body {
+  font-family: $sans;
+  color: $black;
+}
