@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400&display=swap');
-
+@import './variables';
 $sans: 'Roboto', sans-serif;
 $thin: 400;
 $thick: 900;
 
+@mixin outline {
+  font-weight: $thick;
+  color: $black;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $black;
+  letter-spacing: .2em;
+}

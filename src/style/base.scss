@@ -1,7 +1,64 @@
 @import './settings/font';
 @import './settings/variables';
 
+*{
+  box-sizing: border-box;
+}
 body {
   font-family: $sans;
   color: $black;
+  font-size: 16px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  padding: $base $margin;
+  align-items: center;
+  .logo {
+    @include outline();
+    font-size: 1.2em;
+  }
+  .menuToggler {
+    position: relative;
+    height: $base ;
+    width: $base * 3;
+    span {
+      width: $base * 3;
+      height: 1px;
+      background-color: $black;
+      display: block;
+      position: absolute;
+      &:first-child {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: $base /2;
+        left: - $base /2 ;
+      }
+      &:last-child {
+        top: $base ;
+      }
+    }
+    &.nav-open {
+      span{
+        background-color: white;
+      }
+      z-index: 200;
+    }
+  }
+  nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    color: white;
+    &.nav-closed{
+      display: none;
+    }
+  }
 }
