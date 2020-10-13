@@ -11,7 +11,9 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "simplex-noise": "^2.4.0",
+    "three": "^0.121.1"
   },
   "scripts": {
     "start": "react-scripts start",

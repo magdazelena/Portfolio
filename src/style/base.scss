@@ -8,6 +8,15 @@ body {
   font-family: $sans;
   color: $black;
   font-size: 16px;
+  margin: 0;
+}
+.Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; 
+  bottom:0;
+  z-index: -1;
 }
 header {
   display: flex;
