@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import THREE from '../3D/three';
 import SimplexNoise from 'simplex-noise';
 function Background(props) {
   const container = useRef();
-  let cols, rows, scene, renderer, camera;
+  const [position, setPosition] = useState('back');
+  let cols, rows, scene, renderer, camera, mesh;
   let scale = 20;
   let width = 2000;
   let height = 2000;
@@ -13,7 +14,13 @@ function Background(props) {
   let light1, light2, light3;
   var positionChange = width / 3;
   var frontLight;
-
+  useEffect(() => {
+    if (props.isForeground) {
+      setPosition('front');
+    } else {
+      setPosition('back');
+    }
+  }, [props.isForeground]);
   useEffect(() => {
     if (container.current) {
       setup();
@@ -63,7 +70,7 @@ function Background(props) {
       opacity: 0.8
     });
     geometry.verticesNeedUpdate = true;
-    var mesh = new THREE.Mesh(geometry, material);
+    mesh = new THREE.Mesh(geometry, material);
     mesh.rotateX(Math.PI / 26)
     scene.add(mesh);
     //lights
@@ -114,15 +121,17 @@ function Background(props) {
     var s = 0.5;
     var l = 0.5;
     frontLight.color.setHSL(h, s, l);
-    renderer.render(scene, camera);
 
     rmapped++;
-    //controls.update();
+    if (position === 'front') {
+      mesh.rotation.set(new THREE.Vector3(0, 0, Math.PI / 2));
+    }
     renderer.render(scene, camera);
 
   }
+
   return (
-    <div className="Background" ref={container}>
+    <div className={`Background ${position}`} ref={container}>
     </div>
   );
 }

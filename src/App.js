@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Background from './components/Background';
 import Header from './components/Header';
 import './style/base.scss';
 function App() {
+  const [navStatus, setNavStatus] = useState(false);
   return (
     <div className="App">
-      <Background />
-      <Header />
+      <Background isForeground={navStatus} />
+      <Header setNavStatus={setNavStatus} />
       Henlo
     </div>
   );

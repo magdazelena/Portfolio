@@ -17,6 +17,9 @@ body {
   right: 0; 
   bottom:0;
   z-index: -1;
+  &.front{
+    z-index: 200;
+  }
 }
 header {
   display: flex;

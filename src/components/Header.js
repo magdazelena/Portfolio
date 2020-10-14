@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-function Header() {
+function Header(props) {
   const [open, setOpen] = useState(false)
   const toggleNav = () => {
     setOpen(!open);
+    props.setNavStatus(!open);
   }
   return (<header className="header">
     <div className="logo">M/Ż</div>
