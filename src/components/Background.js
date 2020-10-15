@@ -1,13 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Canvas } from 'react-three-fiber';
-import THREE from '../3D/three';
 import BackgroundAnimation from './BackgroundAnimation';
 
 import Camera from './Camera';
 
 function Background(props) {
   const [position, setPosition] = useState('back');
-  const camera = useRef();
 
   useEffect(() => {
     if (props.isForeground) {

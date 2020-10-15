@@ -5,6 +5,7 @@ function Camera(props) {
   const ref = useRef()
   const { setDefaultCamera } = useThree()
   // Make the camera known to the system
+  // eslint-disable-next-line 
   useEffect(() => void setDefaultCamera(ref.current), [])
   // Update it every frame
   useFrame(() => ref.current.updateMatrixWorld())
@@ -15,6 +16,7 @@ function Camera(props) {
       z: props.changedPositionZ,
       duration: 1
     })
+    // eslint-disable-next-line 
   }, [props.changedPositionX])
   return <perspectiveCamera ref={ref} {...props} />
 }

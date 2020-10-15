@@ -79,7 +79,7 @@ function BackgroundAnimation(props) {
         ease: true
       })
     }
-
+    // eslint-disable-next-line 
   }, [props.rotateY])
 
   return (
