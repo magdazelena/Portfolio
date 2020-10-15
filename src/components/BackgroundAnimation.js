@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useFrame } from 'react-three-fiber';
 import THREE from '../3D/three';
-
+import gsap from 'gsap';
 import SimplexNoise from 'simplex-noise';
 
 function BackgroundAnimation(props) {
@@ -10,8 +10,7 @@ function BackgroundAnimation(props) {
   const height = 2000;
   const cols = width / scale;
   const rows = height / scale;
-  let f = 0;
-  let zArray = [];
+
   const simplex = new SimplexNoise();
 
   const mesh = useRef();
@@ -19,24 +18,26 @@ function BackgroundAnimation(props) {
   const redLight = useRef();
   const purpleLight = useRef();
   const greenLight = useRef();
+
+  let f = 0;
+  let zArray = [];
   let rmapped = 0;
   const positionChange = 500;
 
-  const setup = () => {
 
-    let ioff = f;
-    for (let i = 0; i < cols; i++) {
-      let joff = f;
-      for (let j = 0; j < rows; j++) {
-        zArray.push(map_range(simplex.noise2D(ioff, joff), 0, 1, -5, 5));
-        joff += .1;
-      }
-      ioff += .1;
+  //initial values for ZArray
+  let ioff = f;
+  for (let i = 0; i < cols; i++) {
+    let joff = f;
+    for (let j = 0; j < rows; j++) {
+      zArray.push(map_range(simplex.noise2D(ioff, joff), 0, 1, -5, 5));
+      joff += .1;
     }
-
-
+    ioff += .1;
   }
-  setup();
+
+
+
   useFrame((state, time) => {
     f += .01;
     let ioff = f;
@@ -52,6 +53,7 @@ function BackgroundAnimation(props) {
     for (let x = 0; x < mesh.current.geometry.vertices.length; x++) {
       mesh.current.geometry.vertices[x].z = zArray[x];
     }
+
     mesh.current.geometry.verticesNeedUpdate = true;
     redLight.current.position.x = Math.sin(time) * positionChange;
     redLight.current.position.y = Math.sin(time) * positionChange;
@@ -67,12 +69,25 @@ function BackgroundAnimation(props) {
 
     rmapped++;
   })
+
+  useEffect(() => {
+    if (mesh.current !== undefined) {
+      gsap.to(mesh.current.rotation, {
+        y: props.rotateY,
+        z: props.rotateZ,
+        duration: 1,
+        ease: true
+      })
+    }
+
+  }, [props.rotateY])
+
   return (
     <group>
       <mesh
         {...props}
         ref={mesh}
-        rotateX={Math.PI / 16}>
+      >
         <planeGeometry args={[width * 3, height * 3, cols, rows]} />
         <meshStandardMaterial args={[{
           color: 0x769fb6,
