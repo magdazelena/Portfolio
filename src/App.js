@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Background from './components/Background';
 import Header from './components/Header';
-import Landing from './pages/Landing';
+import Container from './pages/Container';
+
 import './style/base.scss';
 function App() {
   const [navStatus, setNavStatus] = useState(false);
@@ -9,7 +10,9 @@ function App() {
     <div className="App">
       <Background isForeground={navStatus} />
       <Header setNavStatus={setNavStatus} />
-      <Landing />
+      <Container />
+
+
     </div>
   );
 }

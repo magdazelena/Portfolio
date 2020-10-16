@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function Header(props) {
   const [open, setOpen] = useState(false)
   const toggleNav = () => {
@@ -7,7 +7,9 @@ function Header(props) {
     props.setNavStatus(!open);
   }
   return (<header className="header">
-    <div className="logo">M/Ż</div>
+    <div className="logo">
+      <Link to="/">M/Ż</Link>
+    </div>
     <div className={`menuToggler ${open ? 'nav-open' : 'nav-closed'}`} onClick={toggleNav}>
       <span></span>
       <span></span>
@@ -16,13 +18,13 @@ function Header(props) {
     <nav className={open ? 'nav-open' : 'nav-closed'} >
       <ul>
         <li>
-          Work
+          <Link onClick={toggleNav} to="/work" >work</Link>
         </li>
         <li>
-          About
+          <Link onClick={toggleNav} to="/about">about</Link>
         </li>
         <li>
-          Contact
+          <Link onClick={toggleNav} to="/contact">contact</Link>
         </li>
       </ul>
     </nav>

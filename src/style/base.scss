@@ -10,10 +10,6 @@ body {
   font-size: 16px;
   margin: 0;
 }
-h1, h2, h3 {
-  font-weight: 400;
-  font-family: $display;
-}
 
 .Background {
   position: fixed;
@@ -74,16 +70,35 @@ header {
     height: 100vh;
     background-color: $black;
     color: white;
+    z-index: 200;
     &.nav-closed{
       display: none;
     }
   }
 }
 
-.headline {
+.intro-text {
   margin: auto;
   margin-top: 25%;
   text-align: center;
   font-size: 5.5em;
   color: $light;
+}
+
+.fade-enter {
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 600ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 600ms ease-in;
 }

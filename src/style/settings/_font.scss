@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @import './variables';
 $sans: 'Roboto', sans-serif;
 $display: 'Bebas Neue', sans-serif;
-
+$thick: 900;
+$thin: 400;
 
 @mixin outline {
   font-family: $display;
@@ -13,4 +14,14 @@ $display: 'Bebas Neue', sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $black;
   letter-spacing: .2em;
+}
+
+.headline, h1, h2, h3 {
+  font-family: $sans;
+  font-weight: $thick;
+}
+a {
+  font-family: $display;
+  text-decoration: none;
+  color: inherit;
 }
