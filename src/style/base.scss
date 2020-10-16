@@ -21,6 +21,9 @@ body {
   &.front{
     z-index: 200;
   }
+  &.dark {
+    background-color: $black;
+  }
 }
 header {
   display: flex;
@@ -29,8 +32,8 @@ header {
   padding: $base $margin;
   align-items: center;
   .logo {
-    @include outline();
-    font-size: 1.6em;
+    font-family: $display;
+    font-size: 2em;
   }
   .menuToggler {
     position: relative;
@@ -38,7 +41,7 @@ header {
     width: $base * 3;
     span {
       width: $base * 3;
-      height: 1px;
+      height: 2px;
       background-color: $black;
       display: block;
       position: absolute;
@@ -58,6 +61,16 @@ header {
         background-color: white;
       }
       z-index: 200;
+    }
+  }
+  &.dark{
+    .logo{
+      color: white;
+    }
+    .menuToggler{
+      span {
+        background-color: white;
+      }
     }
   }
   nav {
@@ -84,7 +97,18 @@ header {
   font-size: 5.5em;
   color: $light;
 }
-
+div.transition-group {
+  position: relative;
+}
+section.route-section, .section {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  height: 90vh;
+}
 .fade-enter {
     opacity: 0.01;
 }
@@ -101,4 +125,14 @@ header {
 .fade-exit.fade-exit-active {
     opacity: 0.01;
     transition: opacity 600ms ease-in;
+}
+.section-title {
+  color: white;
+  @include outline;
+  font-size: 300px;
+  transform: rotateZ(-90deg);
+  position: absolute;
+  right: -300px;
+  margin-bottom: 0;
+  bottom: 200px;
 }

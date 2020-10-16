@@ -11,8 +11,6 @@ function App() {
       <Background isForeground={navStatus} />
       <Header setNavStatus={setNavStatus} />
       <Container />
-
-
     </div>
   );
 }

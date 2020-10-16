@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Canvas } from 'react-three-fiber';
 import BackgroundAnimation from './BackgroundAnimation';
 
@@ -6,7 +7,7 @@ import Camera from './Camera';
 
 function Background(props) {
   const [position, setPosition] = useState('back');
-
+  const currentTheme = useSelector(state => state.currentTheme);
   useEffect(() => {
     if (props.isForeground) {
       setPosition('front');
@@ -17,7 +18,7 @@ function Background(props) {
   }, [props.isForeground]);
 
   return (
-    <div className={`Background ${position}`}>
+    <div className={`Background ${position} ${currentTheme}`}>
       <Canvas>
         <Camera
           changedPositionX={position === 'front' ? 60 : 0}

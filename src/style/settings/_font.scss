@@ -7,13 +7,14 @@ $display: 'Bebas Neue', sans-serif;
 $thick: 900;
 $thin: 400;
 
-@mixin outline {
+@mixin outline($color :white) {
   font-family: $display;
-  color: $black;
+  color: $color;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $black;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $color;
   letter-spacing: .2em;
+  font-weight: 400;
 }
 
 .headline, h1, h2, h3 {

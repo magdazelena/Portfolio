@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 function Header(props) {
   const [open, setOpen] = useState(false)
   const toggleNav = () => {
     setOpen(!open);
     props.setNavStatus(!open);
   }
-  return (<header className="header">
+  const currentTheme = useSelector(state => state.currentTheme);
+  return (<header className={`header ${currentTheme}`}>
     <div className="logo">
       <Link to="/">M/Ż</Link>
     </div>
