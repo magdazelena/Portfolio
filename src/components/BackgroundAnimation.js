@@ -75,6 +75,7 @@ function BackgroundAnimation(props) {
       gsap.to(mesh.current.rotation, {
         y: props.rotateY,
         z: props.rotateZ,
+        x: props.rotateX,
         duration: 1,
         ease: true
       })

@@ -6,7 +6,7 @@ import Landing from './Landing';
 import Work from './Work';
 import Project from './Project';
 
-function Container({ location }) {
+function Container({ location, setBackgroundLocation }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const routes = ["/", "/work"];
   const currentScreen = routes.indexOf(location.pathname);
@@ -14,14 +14,10 @@ function Container({ location }) {
   const previousScreen = state ? state.previousScreen : 0;
   const animationClassNames = currentScreen > previousScreen ? 'slide-down' : 'slide-up';
   const history = useHistory();
-
   useEffect(() => {
-    history.push({
-      pathname: routes[currentIndex],
-      state: { previousScreen: currentScreen }
-    })
-    // eslint-disable-next-line
-  }, [currentIndex]);
+    setBackgroundLocation(currentScreen);
+    // eslint-disable-next-line 
+  }, [])
 
   useLayoutEffect(() => {
     let initPos;
@@ -34,11 +30,23 @@ function Container({ location }) {
         isScrollingDown = Math.sign(e.wheelDeltaY) < 0;
       }
       if (isScrollingDown) {
-        if (currentIndex < routes.length - 1)
+        if (currentIndex < routes.length - 1) {
           setCurrentIndex(prevIndex => prevIndex + 1);
+          history.push({
+            pathname: routes[currentIndex + 1],
+            state: { previousScreen: currentScreen }
+          })
+        }
+
       } else {
-        if (currentIndex > 0)
+        if (currentIndex > 0) {
           setCurrentIndex(prevIndex => prevIndex - 1);
+          history.push({
+            pathname: routes[currentIndex - 1],
+            state: { previousScreen: currentScreen }
+          })
+        }
+
       }
     };
     const onWheel = _.debounce(switchScenes, 100);
@@ -55,6 +63,7 @@ function Container({ location }) {
     }
     // eslint-disable-next-line
   }, [currentIndex]);
+
   return (<TransitionGroup
     className="transition-group"
     childFactory={child => React.cloneElement(child, {

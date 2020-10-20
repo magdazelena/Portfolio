@@ -8,6 +8,7 @@ import Camera from './Camera';
 function Background(props) {
   const [position, setPosition] = useState('back');
   const currentTheme = useSelector(state => state.currentTheme);
+  console.log(props.location);
   useEffect(() => {
     if (props.isForeground) {
       setPosition('front');
@@ -28,7 +29,9 @@ function Background(props) {
           position={[0, -120, 100]} />
         <BackgroundAnimation
           rotateY={position === 'front' ? Math.PI / 3 : 0}
-          rotateZ={position === 'front' ? -Math.PI / 4 : 0} />
+          rotateZ={position === 'front' ? -Math.PI / 4 : 0}
+          rotateX={props.location === 1 ? Math.PI / 3 : 0}
+        />
       </Canvas>
     </div>
   );
