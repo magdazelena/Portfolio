@@ -18,6 +18,8 @@ body {
   right: 0; 
   bottom:0;
   z-index: -1;
+  background-color: white;
+  transition: background-color .6s ease;
   &.front{
     z-index: 200;
   }
@@ -109,23 +111,7 @@ section.route-section, .section {
   overflow: hidden;
   height: 90vh;
 }
-.fade-enter {
-    opacity: 0.01;
-}
 
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 600ms ease-in;
-}
-
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 600ms ease-in;
-}
 .section-title {
   color: white;
   @include outline;
@@ -135,4 +121,54 @@ section.route-section, .section {
   right: -300px;
   margin-bottom: 0;
   bottom: 200px;
+
+}
+
+.slide-down-enter,
+.slide--down-exit {
+  transition: transform 600ms ease-out;
+}
+
+.slide-down-enter {
+  transform: translateY(100%);
+}
+
+.slide-down-enter.slide-down-active {
+  transform: translateY(0%);
+}
+
+.slide-down-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0%);
+}
+
+.slide-down-exit-active {
+  transform: translateY(-100%);
+}
+.slide-up-enter,
+.slide--up-exit {
+  transition: transform 600ms ease-out;
+}
+
+.slide-up-enter {
+  transform: translateY(-100%);
+}
+
+.slide-up-enter.slide-up-active {
+  transform: translateY(0%);
+}
+
+.slide-up-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0%);
+}
+
+.slide-up-exit-active {
+  transform: translateY(100%);
 }

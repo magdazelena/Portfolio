@@ -5,3 +5,13 @@
 .work {
   height: 70vh;
 }
+.work-slider {
+  position: relative;
+  top: 100vh;
+}
+.work-single {
+  width: 60%;
+  height: 60vh;
+  background-color: $light;
+  margin: auto;
+}
