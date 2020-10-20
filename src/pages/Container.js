@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import _ from 'lodash';
 import Landing from './Landing';
 import Work from './Work';
+import Project from './Project';
 
 function Container({ location }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +41,7 @@ function Container({ location }) {
           setCurrentIndex(prevIndex => prevIndex - 1);
       }
     };
-    const onWheel = _.debounce(switchScenes, 300);
+    const onWheel = _.debounce(switchScenes, 100);
     const getInitTouch = e => {
       initPos = e.touches[0].clientY;
     }
@@ -67,6 +68,7 @@ function Container({ location }) {
         <Switch location={location}>
           <Route exact path={routes[0]} component={Landing} />
           <Route path={routes[1]} component={Work} />
+          <Route path="/project/:id" component={routerProps => <Project id={routerProps.match.params.id} />} />
         </Switch>
       </section>
 

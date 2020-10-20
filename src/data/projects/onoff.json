@@ -1,0 +1,16 @@
+{
+  "id": "onoff",
+  "number": 1,
+  "main_title": "OnOff Architects",
+  "title": "OnOff Architects website development and UI animation",
+  "manchet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a feugiat augue, laoreet semper eros. Fusce accumsan turpis tempor, vehicula nibh vitae, accumsan erat. Morbi nec lacinia odio. Vivamus aliquam felis gravida sapien fermentum aliquet. Maecenas aliquet nulla eget elementum convallis. Ut porta diam pharetra venenatis sodales. Proin finibus orci at pellentesque vestibulum.\nVivamus feugiat sodales tellus eu aliquam. Morbi sit amet tempus urna. Quisque auctor odio eget eros lobortis, sit amet varius nibh suscipit. Vestibulum fringilla dolor id leo porttitor tincidunt. Sed suscipit a lorem nec lobortis. Nulla sit amet ultricies lacus. Donec at mauris ipsum. Cras porta metus eget urna ultricies, fermentum vestibulum quam volutpat. In varius ornare libero aliquet malesuada. Cras rutrum tortor sit amet ipsum congue, sed suscipit eros volutpat. Proin et metus vestibulum, consequat eros congue, vulputate tellus. Integer in lorem consectetur libero gravida mattis non eu tortor. Nulla eget ipsum nec enim laoreet feugiat sed at ex. Nam diam dolor, finibus id arcu quis, ultricies rhoncus ipsum. Mauris scelerisque pulvinar lorem, vel sagittis felis congue eget.",
+  "top_image": "../",
+  "images": [
+    {
+      "image": "./",
+      "alt": "",
+      "caption": "",
+      "description": ""
+    }
+  ]
+}

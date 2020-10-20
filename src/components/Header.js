@@ -9,6 +9,9 @@ function Header(props) {
     props.setNavStatus(!open);
   }
   const currentTheme = useSelector(state => state.currentTheme);
+
+
+
   return (<header className={`header ${currentTheme}`}>
     <div className="logo">
       <Link to="/">M/Ż</Link>
