@@ -32,6 +32,9 @@ function Header(props) {
         <li>
           <Link onClick={toggleNav} to="/contact">03   contact</Link>
         </li>
+        <li>
+          <a href="https://medium.com/fink-it">04 blog</a>
+        </li>
       </ul>
     </nav>
   </header>)

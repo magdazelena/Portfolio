@@ -1,0 +1,39 @@
+@import '../settings/font';
+@import '../settings/variables';
+
+.about {
+  color: white;
+  height: 70vh;
+  position: absolute;
+  bottom: 0;
+  margin-left: $margin;
+  margin-bottom: $margin;
+  display: flex;
+  align-items: flex-end;
+  .section-title{
+    right:-366px;
+  }
+  &--texts{
+    display: flex;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    h2 {
+      font-family: $display;
+      color: $light;
+    }
+  }
+  &--description{
+    width: 30%;
+    margin-right: $margin;
+  }
+  &--tech {
+    h2{
+      margin-bottom: 0;
+    }
+    ul{
+      margin-top: 0;
+      padding-left: $margin * 2;
+      list-style: square;
+    }
+  }
+}

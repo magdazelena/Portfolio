@@ -5,10 +5,12 @@ import _ from 'lodash';
 import Landing from './Landing';
 import Work from './Work';
 import Project from './Project';
+import About from './About';
+import Contact from './Contact';
 
 function Container({ location, setBackgroundLocation }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const routes = ["/", "/work"];
+  const routes = ["/", "/work", "/about", "/contact"];
   const currentScreen = routes.indexOf(location.pathname);
   const { state } = location;
   const previousScreen = state ? state.previousScreen : 0;
@@ -30,7 +32,7 @@ function Container({ location, setBackgroundLocation }) {
         isScrollingDown = Math.sign(e.wheelDeltaY) < 0;
       }
       if (isScrollingDown) {
-        if (currentIndex < routes.length - 1 && currentIndex > 0) {
+        if (currentIndex < routes.length - 1 && currentIndex >= 0) {
           setCurrentIndex(prevIndex => prevIndex + 1);
           history.push({
             pathname: routes[currentIndex + 1],
@@ -49,7 +51,7 @@ function Container({ location, setBackgroundLocation }) {
 
       }
     };
-    const onWheel = _.debounce(switchScenes, 100);
+    const onWheel = _.debounce(switchScenes, 200);
     const getInitTouch = e => {
       initPos = e.touches[0].clientY;
     }
@@ -77,6 +79,8 @@ function Container({ location, setBackgroundLocation }) {
         <Switch location={location}>
           <Route exact path={routes[0]} component={Landing} />
           <Route path={routes[1]} component={Work} />
+          <Route path={routes[2]} component={About} />
+          <Route path={routes[3]} component={Contact} />
           <Route path="/project/:id" component={routerProps => <Project id={routerProps.match.params.id} />} />
         </Switch>
       </section>

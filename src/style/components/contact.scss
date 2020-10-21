@@ -1,0 +1,36 @@
+@import '../settings/font';
+@import '../settings/variables';
+
+.contact {
+  margin-left: $margin;
+  margin-bottom: $margin;
+  height: 100%;
+  &--links{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .contact--links{
+    &--main{
+      font-size: 2em;
+    }
+    &--sub{
+      margin-top: auto;
+      margin-bottom: $margin;
+    }
+  }
+  }
+  h2 {
+    font-size: 80px;
+    color: $light;
+  }
+  a {
+    color: $blue;
+    padding-right: $base;
+  }
+  .section-title{
+    color: $black;
+    -webkit-text-stroke-color: $black;
+    bottom: 421px;
+    right: -533px;
+  }
+}

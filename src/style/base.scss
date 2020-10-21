@@ -133,7 +133,7 @@ section.route-section, .section {
   left: 0;
   bottom: 0;
   overflow: hidden;
-  height: 90vh;
+  height: calc(100vh - 82px);
   &.section-nr--1{
     overflow: visible;
     height: auto;
