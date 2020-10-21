@@ -24,13 +24,13 @@ function Header(props) {
     <nav className={open ? 'nav-open' : 'nav-closed'} >
       <ul>
         <li>
-          <Link onClick={toggleNav} to="/work" >work</Link>
+          <Link onClick={toggleNav} to="/work" >01   work</Link>
         </li>
         <li>
-          <Link onClick={toggleNav} to="/about">about</Link>
+          <Link onClick={toggleNav} to="/about">02   about</Link>
         </li>
         <li>
-          <Link onClick={toggleNav} to="/contact">contact</Link>
+          <Link onClick={toggleNav} to="/contact">03   contact</Link>
         </li>
       </ul>
     </nav>

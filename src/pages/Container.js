@@ -17,7 +17,7 @@ function Container({ location, setBackgroundLocation }) {
   useEffect(() => {
     setBackgroundLocation(currentScreen);
     // eslint-disable-next-line 
-  }, [])
+  }, [location])
 
   useLayoutEffect(() => {
     let initPos;

@@ -7,16 +7,23 @@ import Camera from './Camera';
 
 function Background(props) {
   const [position, setPosition] = useState('back');
+  const [location, setLocation] = useState(0);
   const currentTheme = useSelector(state => state.currentTheme);
-  console.log(props.location);
   useEffect(() => {
     if (props.isForeground) {
       setPosition('front');
-
+      setLocation(0);
     } else {
       setPosition('back');
+      setLocation(props.location);
     }
+    // eslint-disable-next-line
   }, [props.isForeground]);
+
+  useEffect(() => {
+    console.log(props.location)
+    setLocation(props.location);
+  }, [props.location]);
 
   return (
     <div className={`Background ${position} ${currentTheme}`}>
@@ -30,7 +37,7 @@ function Background(props) {
         <BackgroundAnimation
           rotateY={position === 'front' ? Math.PI / 3 : 0}
           rotateZ={position === 'front' ? -Math.PI / 4 : 0}
-          rotateX={props.location === 1 ? Math.PI / 3 : 0}
+          rotateX={location === 1 ? Math.PI / 3 : 0}
         />
       </Canvas>
     </div>

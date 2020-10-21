@@ -81,7 +81,17 @@ function BackgroundAnimation(props) {
       })
     }
     // eslint-disable-next-line 
-  }, [props.rotateY])
+  }, [props.rotateY]);
+
+  useEffect(() => {
+    if (mesh.current !== undefined) {
+      gsap.to(mesh.current.rotation, {
+        x: props.rotateX,
+        duration: 1,
+        ease: true
+      })
+    }
+  }, [props.rotateX]);
 
   return (
     <group>

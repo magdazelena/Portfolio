@@ -89,6 +89,26 @@ header {
     &.nav-closed{
       display: none;
     }
+    ul {
+      position: absolute;
+      bottom: 200px;
+      left: 100px;
+      list-style-type: none;
+      font-size: 40px;
+      li {
+        margin-bottom: 10px;
+          &:after{
+            position: relative;
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: white;
+            margin-top: 0.1em;
+            content: '';
+          }
+        
+      }
+    }
   }
 }
 
