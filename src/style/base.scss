@@ -111,7 +111,11 @@ header {
     }
   }
 }
-
+.caption {
+        color: $blue;
+        font-family: $display;
+        margin-top: 0px;
+      }
 .intro-text {
   margin: auto;
   margin-top: 25%;
@@ -130,6 +134,10 @@ section.route-section, .section {
   bottom: 0;
   overflow: hidden;
   height: 90vh;
+  &.section-nr--1{
+    overflow: visible;
+    height: auto;
+  }
 }
 
 .section-title {

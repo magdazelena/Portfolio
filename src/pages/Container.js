@@ -30,7 +30,7 @@ function Container({ location, setBackgroundLocation }) {
         isScrollingDown = Math.sign(e.wheelDeltaY) < 0;
       }
       if (isScrollingDown) {
-        if (currentIndex < routes.length - 1) {
+        if (currentIndex < routes.length - 1 && currentIndex > 0) {
           setCurrentIndex(prevIndex => prevIndex + 1);
           history.push({
             pathname: routes[currentIndex + 1],
@@ -73,7 +73,7 @@ function Container({ location, setBackgroundLocation }) {
       appear={true}
       timeout={{ enter: 600, exit: 600, appear: 600 }}
       classNames={`${animationClassNames} slide`}>
-      <section className="route-section">
+      <section className={`route-section section-nr-${currentScreen}`}>
         <Switch location={location}>
           <Route exact path={routes[0]} component={Landing} />
           <Route path={routes[1]} component={Work} />

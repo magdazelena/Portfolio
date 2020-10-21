@@ -18,6 +18,12 @@ function Camera(props) {
     })
     // eslint-disable-next-line 
   }, [props.changedPositionX])
+  useEffect(() => {
+    gsap.to(ref.current.position, {
+      y: props.changedPositionY, duration: 1
+    })
+  }, [props.changedPositionY]);
+
   return <perspectiveCamera ref={ref} {...props} />
 }
 

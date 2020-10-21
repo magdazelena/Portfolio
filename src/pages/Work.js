@@ -48,7 +48,14 @@ function Work(props) {
         return (<div className={`work-single ${slide === key ? 'slide-active' : 'slide'}`} key={key}>
           <div className="work-image">{topImage}</div>
           <div className="work-texts">
-            <h2>{item.main_title}</h2>
+            <div className="work-title">
+              <h2>{item.main_title}</h2>
+              <p className="caption">
+                {item.tech.map((tec, key) => {
+                  return <span key={key}>{tec}</span>
+                })}
+              </p>
+            </div>
             <Link
               to={`./project/${item.id}`}
               className="headline">0{item.number} See more</Link>

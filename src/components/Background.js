@@ -31,13 +31,14 @@ function Background(props) {
         <Camera
           changedPositionX={position === 'front' ? 60 : 0}
           changedPositionZ={position === 'front' ? 200 : 100}
-          fov={200}
+          changedPositionY={location === -1 ? 300 : -120}
+          fov={location === -1 ? 80 : 200}
           aspect={window.innerWidth / window.innerHeight}
           position={[0, -120, 100]} />
         <BackgroundAnimation
           rotateY={position === 'front' ? Math.PI / 3 : 0}
           rotateZ={position === 'front' ? -Math.PI / 4 : 0}
-          rotateX={location === 1 ? Math.PI / 3 : 0}
+          rotateX={location === 1 ? Math.PI / 3 : location === -1 ? -Math.PI / 1.5 : 0}
         />
       </Canvas>
     </div>

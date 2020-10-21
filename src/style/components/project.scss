@@ -1,0 +1,51 @@
+@import '../settings/font';
+@import '../settings/variables';
+
+.project{
+  margin: $margin;
+  h1 {
+    font-size: 5em;
+    width: 80%;
+  }
+}
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  .project-manchet {
+    width: 40%;
+    margin-bottom: $margin*4;
+    &--description{
+      font-size: 1.3em;
+      margin-bottom: 1em;
+    }
+    &--tech {
+      color: $blue;
+      font-family: $display;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      p{
+        margin-left: $base;
+      }
+    }
+  }
+  .project-top-image{
+    width: 50%;
+    img, video {
+      width: 100%;
+    }
+  }
+  
+}
+.project-media {
+    .project-medium {
+      img, video {
+        width: 100%;
+      }
+      &--description {
+        font-size: 1.3em;
+        width: 80%;
+      }
+    }
+    margin-bottom: $margin*4;
+  }
