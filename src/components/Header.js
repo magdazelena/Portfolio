@@ -12,7 +12,7 @@ function Header(props) {
 
 
 
-  return (<header className={`header ${currentTheme}`}>
+  return (<header className={`header ${currentTheme} ${open ? 'header--open' : 'header--closed'}`}>
     <div className="logo">
       <Link to="/">M/Ż</Link>
     </div>

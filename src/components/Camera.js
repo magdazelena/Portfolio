@@ -14,13 +14,15 @@ function Camera(props) {
     gsap.to(ref.current.position, {
       x: props.changedPositionX,
       z: props.changedPositionZ,
+      y: props.changedPositionY,
       duration: 1
     })
     // eslint-disable-next-line 
   }, [props.changedPositionX])
   useEffect(() => {
     gsap.to(ref.current.position, {
-      y: props.changedPositionY, duration: 1
+      y: props.changedPositionY,
+      duration: 1
     })
   }, [props.changedPositionY]);
 

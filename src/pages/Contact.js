@@ -25,10 +25,10 @@ function Contact(props) {
         <a href="https://www.linkedin.com/in/magda-zelezik/">LinkedIn</a>
         <a href="https://medium.com/@magdazelena">Medium</a>
       </div>
-      <div className="contact--links--sub">
+      {/* <div className="contact--links--sub">
         <h3 className="subheadline">Do you like this website? <a href="https://github.com/magdazelena/Portfolio">Check out the source code!</a></h3>
-        <h3 className="subheadline">Or contact me to make one for you ;)</h3>
-      </div>
+        <h3 className="subheadline">Or contact me to make one for you.</h3> 
+      </div> */}
     </div>
   </div>
 }

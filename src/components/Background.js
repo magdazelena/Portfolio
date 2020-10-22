@@ -32,13 +32,14 @@ function Background(props) {
           changedPositionX={position === 'front' ? 60 : 0}
           changedPositionZ={position === 'front' ? 200 : 100}
           changedPositionY={location === -1 ? 300 : location === 2 ? 400 : -120}
-          fov={location === -1 ? 80 : 200}
+          fov={location === -1 && position === 'back' ? 80 : 200}
           aspect={window.innerWidth / window.innerHeight}
           position={[0, -120, 100]} />
         <BackgroundAnimation
           rotateY={position === 'front' ? Math.PI / 3 : 0}
           rotateZ={position === 'front' ? -Math.PI / 4 : 0}
           rotateX={location === 1 ? Math.PI / 3 : location === -1 ? -Math.PI / 1.5 : location === 2 ? -Math.PI / 2 : 0}
+          ifactor={location === 2 ? 7 : 1}
         />
       </Canvas>
     </div>

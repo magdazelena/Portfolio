@@ -28,7 +28,7 @@ body {
     background-color: $black;
   }
 }
-header {
+.header {
   display: flex;
   justify-content: space-between;
   width: auto;
@@ -37,6 +37,7 @@ header {
   .logo {
     font-family: $display;
     font-size: 2em;
+    z-index: 202;
   }
   .menuToggler {
     position: relative;
@@ -48,6 +49,7 @@ header {
       background-color: $black;
       display: block;
       position: absolute;
+      transition: all 1s ease;
       &:first-child {
         top: 0;
       }
@@ -62,13 +64,26 @@ header {
     &.nav-open {
       span{
         background-color: white;
+        &:first-child {
+          transform: rotate(45deg);
+          top: 10px;
+        }
+        &:nth-child(2) {
+          width: 0px;
+        }
+        &:last-child {
+          transform: rotate(-45deg);
+          top: 10px;
+        }
       }
       z-index: 202;
     }
   }
-  &.dark{
+  &.dark, &--open{
     .logo{
-      color: white;
+      a{
+        color: white;
+      }
     }
     .menuToggler{
       span {

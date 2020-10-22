@@ -9,9 +9,10 @@ import About from './About';
 import Contact from './Contact';
 
 function Container({ location, setBackgroundLocation }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+
   const routes = ["/", "/work", "/about", "/contact"];
   const currentScreen = routes.indexOf(location.pathname);
+  const [currentIndex, setCurrentIndex] = useState(currentScreen);
   const { state } = location;
   const previousScreen = state ? state.previousScreen : 0;
   const animationClassNames = currentScreen > previousScreen ? 'slide-down' : 'slide-up';
@@ -24,7 +25,7 @@ function Container({ location, setBackgroundLocation }) {
   useLayoutEffect(() => {
     let initPos;
     let isScrollingDown = false;
-
+    if (currentScreen === -1) return;
     const switchScenes = (e) => {
       if (e.touches) {
         isScrollingDown = initPos < e.changedTouches[0].clientY;
@@ -64,7 +65,7 @@ function Container({ location, setBackgroundLocation }) {
       window.removeEventListener('touchstart', getInitTouch);
     }
     // eslint-disable-next-line
-  }, [currentIndex]);
+  }, [currentIndex, currentScreen]);
 
   return (<TransitionGroup
     className="transition-group"

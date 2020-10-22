@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from 'react-three-fiber';
 import THREE from '../3D/three';
 import gsap from 'gsap';
 import SimplexNoise from 'simplex-noise';
 
 function BackgroundAnimation(props) {
+  const [ifactor, setIfactor] = useState(1);
   const scale = 20;
   const width = 2000;
   const height = 2000;
@@ -18,7 +19,6 @@ function BackgroundAnimation(props) {
   const redLight = useRef();
   const purpleLight = useRef();
   const greenLight = useRef();
-
   let f = 0;
   let zArray = [];
   let rmapped = 0;
@@ -45,10 +45,10 @@ function BackgroundAnimation(props) {
     for (let i = 0; i < cols; i++) {
       let joff = 0;
       for (let j = 0; j < rows; j++) {
-        zArray.push(map_range(simplex.noise2D(ioff, joff), 0, 1, -18, 18));
-        joff += .1;
+        zArray.push(map_range(simplex.noise2D(ioff, joff), 0, 1, -18 * ifactor, 18 * ifactor));
+        joff += .1 * ifactor;
       }
-      ioff += .1;
+      ioff += .1 * ifactor;
     }
     for (let x = 0; x < mesh.current.geometry.vertices.length; x++) {
       mesh.current.geometry.vertices[x].z = zArray[x];
@@ -63,8 +63,8 @@ function BackgroundAnimation(props) {
     greenLight.current.position.x = Math.sin(time) * positionChange / 3;
     greenLight.current.position.y = Math.sin(time) * positionChange / 3;
     var h = rmapped * 0.01 % 1;
-    var s = 0.5;
-    var l = 0.5;
+    var s = 0.9;
+    var l = 0.3;
     frontLight.current.color.setHSL(h, s, l);
 
     rmapped++;
@@ -93,6 +93,9 @@ function BackgroundAnimation(props) {
     }
   }, [props.rotateX]);
 
+  useEffect(() => {
+    setIfactor(props.ifactor)
+  }, [props.ifactor])
   return (
     <group>
       <mesh
