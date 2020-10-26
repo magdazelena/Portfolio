@@ -17,6 +17,7 @@ function Container({ location, setBackgroundLocation }) {
   const previousScreen = state ? state.previousScreen : 0;
   const animationClassNames = currentScreen > previousScreen ? 'slide-down' : 'slide-up';
   const history = useHistory();
+
   useEffect(() => {
     setBackgroundLocation(currentScreen);
     // eslint-disable-next-line 

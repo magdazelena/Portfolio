@@ -3,9 +3,17 @@
 
 .project{
   margin: $margin;
+  margin-right: $margin * 3;
   h1 {
     font-size: 5em;
     width: 80%;
+  }
+  .section-title{
+    position: fixed;
+    color: $black;
+    -webkit-text-stroke-color: $black;
+    bottom: 200px;
+    right: -300px;
   }
 }
 .project-top {

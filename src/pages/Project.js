@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import { getProjectByID } from '../data';
+import { Link } from 'react-router-dom'
+import { getNextProjectID, getProjectByID } from '../data';
 import { useDispatch, useSelector } from 'react-redux';
 import '../style/components/project.scss';
 
@@ -8,19 +9,24 @@ function Project(props) {
 
   const [project, setProject] = useState(null);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch({ type: 'SET_THEME', payload: 'light' })
+
   }, [dispatch])
 
   const currentTheme = useSelector(state => state.currentTheme);
   useEffect(() => {
     let project = getProjectByID(props.id);
-    setProject(project);
+    setProject(project);;
     // eslint-disable-next-line
   }, []);
   return <div>
     {project && (<div className={`${currentTheme} project`}>
       <h1>{ReactHtmlParser(project.title)}</h1>
+      <h2 className="section-title outline">
+        Work
+    </h2>
       <div className="project-top">
         <div className="project-manchet">
           <div className="project-manchet--description">
@@ -52,6 +58,7 @@ function Project(props) {
           </div>
         })}
       </div>
+      <div className="next-page"><Link to={`/project/${getNextProjectID(project.number)}`}>0{project.number + 1} {getNextProjectID(project.number)} <span className="dash"></span> Next</Link></div>
     </div>)
     }
     {!project && (<div><h1>Sorry, no project found.</h1></div>)}

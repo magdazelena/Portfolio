@@ -210,3 +210,28 @@ section.route-section, .section {
 .slide-up-exit-active {
   transform: translateY(100%);
 }
+.next-page {
+  transform: rotate(-90deg);
+  font-size: 2em;
+  margin-left: -150px;
+  margin-bottom: 100px;
+  display: inline-block;
+  a{
+    display: inline-flex;
+    align-items: center;
+    .dash {
+      display: inline-block;
+      height: 3px;
+      width: $base * 3;
+      background-color: $black;
+      margin: 0 $base;
+      transition: transform 1s ease;
+    }
+    &:hover {
+      .dash{
+        transform: translate(-20px, 0);
+      }
+    }
+  }
+  
+}

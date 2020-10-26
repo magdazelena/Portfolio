@@ -21,3 +21,11 @@ export const getProjectByID = id => {
   })
   return project[0];
 }
+export const getNextProjectID = number => {
+  let projects = loadJson();
+  if (!((number + 1) in projects)) {
+    return projects[1].id;
+  } else {
+    return projects[number + 1].id
+  }
+}
