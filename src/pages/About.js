@@ -1,19 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import ReactHtmlParser from 'react-html-parser';
 import '../style/components/about.scss';
 function About(props) {
   const dispatch = useDispatch();
   const currentTheme = useSelector(state => state.currentTheme);
-
+  const [mobileDir, setMobileDir] = useState(true);
   useEffect(() => {
     dispatch({ type: 'SET_THEME', payload: 'dark' });
 
   }, [dispatch]);
+  const changeDir = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setMobileDir(!mobileDir);
+  }
   return <div className={`about ${currentTheme}`}>
     <h1 className="section-title outline">
       About
     </h1>
-    <div className="about--texts">
+    <div className={`about--texts ${mobileDir ? 'left' : 'right'}`}>
       <div className="about--description">
         <h2>Nice to meet you</h2>
         <p>My name is Magda Żelezik</p>
@@ -52,6 +58,7 @@ function About(props) {
         </ul>
       </div>
     </div>
+    <div className="mobile-more" onClick={changeDir}>{ReactHtmlParser('&LongLeftRightArrow;')}</div>
   </div>
 }
 

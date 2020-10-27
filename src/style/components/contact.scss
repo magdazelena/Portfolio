@@ -20,7 +20,7 @@
   }
   }
   h2 {
-    font-size: 80px;
+    font-size: 4em;
     color: $light;
   }
   a {
@@ -30,7 +30,15 @@
   .section-title{
     color: $black;
     -webkit-text-stroke-color: $black;
-    bottom: 421px;
-    right: -533px;
+    bottom: 140px;
+    right: -180px;
   }
+}
+@media only screen and (min-width: 1030px) {
+ .contact {
+   .section-title {
+    bottom: 421px;
+  right: -533px;
+ }
+ }
 }

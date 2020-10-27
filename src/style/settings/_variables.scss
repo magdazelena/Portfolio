@@ -3,5 +3,9 @@ $blue: #3b5768;
 $light: #a5b5be;
 
 
-$base : 20px;
-$margin: 80px;
+$base : 15px;
+$margin: 30px;
+@media only screen and (min-width: 1030px) {
+  $margin: 80px;
+  $base: 30px;
+}

@@ -59,10 +59,10 @@ function Container({ location, setBackgroundLocation }) {
     }
     window.addEventListener('mousewheel', onWheel);
     window.addEventListener('touchstart', getInitTouch)
-    window.addEventListener('touchend', switchScenes);
+    window.addEventListener('touchmove', switchScenes);
     return () => {
       window.removeEventListener('mousewheel', onWheel);
-      window.removeEventListener('touchend', switchScenes);
+      window.removeEventListener('touchmove', switchScenes);
       window.removeEventListener('touchstart', getInitTouch);
     }
     // eslint-disable-next-line

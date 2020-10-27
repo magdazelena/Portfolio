@@ -21,7 +21,7 @@ function Work(props) {
   const introAnimation = () => {
     gsap.to(slider.current, {
       duration: 1,
-      top: 200,
+      top: 100,
       delay: .6
     })
   }

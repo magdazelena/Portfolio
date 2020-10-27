@@ -12,7 +12,7 @@ function Landing(props) {
 
   return (<div className={`landing section ${currentTheme}`}>
     <h1 className="intro-text">
-      My name is Magdalena <br />
+      My name is Magda. <br />
       I'm a frontend developer.
     </h1>
   </div >)

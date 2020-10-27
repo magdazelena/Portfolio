@@ -3,7 +3,7 @@
 
 .project{
   margin: $margin;
-  margin-right: $margin * 3;
+ 
   h1 {
     font-size: 5em;
     width: 80%;
@@ -12,19 +12,20 @@
     position: fixed;
     color: $black;
     -webkit-text-stroke-color: $black;
-    bottom: 200px;
-    right: -300px;
+    right: -100px;
   }
 }
 .project-top {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   .project-manchet {
-    width: 40%;
+    width: 100%;
     margin-bottom: $margin*4;
     &--description{
       font-size: 1.3em;
       margin-bottom: 1em;
+      margin-right: $margin * 2;
     }
     &--tech {
       color: $blue;
@@ -38,7 +39,8 @@
     }
   }
   .project-top-image{
-    width: 50%;
+    width: 100%;
+    margin-bottom: $margin;
     img, video {
       width: 100%;
     }
@@ -53,7 +55,36 @@
       &--description {
         font-size: 1.3em;
         width: 80%;
+        margin-right: $margin * 2;
       }
     }
     margin-bottom: $margin*4;
+  }
+  @media only screen and (min-width: 1030px) {
+    .project {
+       margin-right: $margin * 3;
+       .section-title {
+         bottom: 200px;
+          right: -300px;
+       }
+    }
+    .project-top {
+      flex-direction: row;
+      .project-manchet {
+        width: 40%;
+        &--description {
+          margin-right: 0;
+        }
+      }
+      .project-top-image {
+        width: 50%;
+      }
+    }
+    .project-media {
+    .project-medium {
+        &--description {
+          margin-right: 0;
+        }
+      }
+    }
   }

@@ -10,11 +10,69 @@
   margin-bottom: $margin;
   display: flex;
   align-items: flex-end;
-  .section-title{
-    right:-366px;
+  .section-title {
+    right: 74vw;
   }
   &--texts{
     display: flex;
+    overflow: scroll;
+    width: 200vw;
+    font-size: 1.3em;
+    transform: translateX(0);
+    transition: transform 1s ease;
+    &.right{
+      transform: translateX(-100vw);
+    }
+    h2 {
+      font-family: $display;
+      color: $light;
+    }
+  }
+  &--description {
+    width: 75vw;
+    margin-right: $margin * 3 ;
+  }
+  &--tech {
+    width: 80vw;
+    h2{
+      margin-bottom: 0;
+    }
+    ul{
+      margin-top: 0;
+      list-style: square;
+    }
+  }
+  .mobile-more {
+    height: 50px;
+    font-size: 3em;
+    bottom: -40px;
+    position: absolute;
+    z-index: 199;
+  }
+}
+@media only screen and (min-width: 760px) {
+  .about {
+    &--description {
+      width: 90vw;
+    }
+    .section-title {
+      right: 88vw;
+      bottom: 86px;
+    }
+  }
+}
+@media only screen and (min-width: 1030px) {
+  
+ .about {
+   .mobile-more {
+    display: none;
+  }
+   .section-title{
+    right:-366px;
+  }
+   &--texts{
+   width: 100%;
+   overflow: hidden;
     font-size: 1.3em;
     line-height: 1.6em;
     h2 {
@@ -23,8 +81,8 @@
     }
   }
   &--description{
-    width: 30%;
-    margin-right: $margin;
+    width: 40%;
+    margin-right: $margin * 3;
   }
   &--tech {
     h2{
@@ -36,4 +94,5 @@
       list-style: square;
     }
   }
+ } 
 }

@@ -7,7 +7,7 @@
 body {
   font-family: $sans;
   color: $black;
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -107,10 +107,13 @@ body {
     ul {
       position: absolute;
       bottom: 200px;
-      left: 100px;
+      left: 0px;
+      padding: 0;
+      margin-left: $margin;
       list-style-type: none;
       font-size: 40px;
       li {
+        
         margin-bottom: 10px;
           &:after{
             position: relative;
@@ -135,8 +138,26 @@ body {
   margin: auto;
   margin-top: 25%;
   text-align: center;
-  font-size: 5.5em;
-  color: $light;
+  font-size: 3em;
+  padding: $margin;
+  color: $blue;
+  font-family: $display;
+background: linear-gradient(45deg, $light, $blue, #ff3399, $light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 20s ease-in-out infinite;
+    background-size: 400% 100%;
+  
+}
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
 div.transition-group {
   position: relative;
@@ -158,12 +179,13 @@ section.route-section, .section {
 .section-title {
   color: white;
   @include outline;
-  font-size: 300px;
+  font-size: 100px;
   transform: rotateZ(-90deg);
   position: absolute;
-  right: -300px;
+  right: -100px;
   margin-bottom: 0;
-  bottom: 200px;
+  bottom: 63px;
+  pointer-events: none;
 
 }
 
@@ -213,7 +235,7 @@ section.route-section, .section {
 .next-page {
   transform: rotate(-90deg);
   font-size: 2em;
-  margin-left: -150px;
+  margin-left: -80px;
   margin-bottom: 100px;
   display: inline-block;
   a{
@@ -234,4 +256,10 @@ section.route-section, .section {
     }
   }
   
+}
+@media only screen and (min-width: 760px) {
+  @import './breakpoints/_760.scss';
+}
+@media only screen and (min-width: 1030px) {
+  @import './breakpoints/_1030.scss';
 }
