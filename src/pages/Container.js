@@ -29,7 +29,7 @@ function Container({ location, setBackgroundLocation }) {
     if (currentScreen === -1) return;
     const switchScenes = (e) => {
       if (e.touches) {
-        isScrollingDown = initPos < e.changedTouches[0].clientY;
+        isScrollingDown = initPos > e.changedTouches[0].clientY;
       } else {
         isScrollingDown = Math.sign(e.wheelDeltaY) < 0;
       }
@@ -59,10 +59,10 @@ function Container({ location, setBackgroundLocation }) {
     }
     window.addEventListener('mousewheel', onWheel);
     window.addEventListener('touchstart', getInitTouch)
-    window.addEventListener('touchmove', switchScenes);
+    window.addEventListener('touchmove', onWheel);
     return () => {
       window.removeEventListener('mousewheel', onWheel);
-      window.removeEventListener('touchmove', switchScenes);
+      window.removeEventListener('touchmove', onWheel);
       window.removeEventListener('touchstart', getInitTouch);
     }
     // eslint-disable-next-line

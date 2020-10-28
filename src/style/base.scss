@@ -142,23 +142,10 @@ body {
   padding: $margin;
   color: $blue;
   font-family: $display;
-background: linear-gradient(45deg, $light, $blue, #ff3399, $light);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow_animation 20s ease-in-out infinite;
-    background-size: 400% 100%;
+  @include gradient-text();
   
 }
-@keyframes rainbow_animation {
-    0%,100% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 100% 0;
-    }
-}
+  
 div.transition-group {
   position: relative;
 }
@@ -232,30 +219,9 @@ section.route-section, .section {
 .slide-up-exit-active {
   transform: translateY(100%);
 }
+
 .next-page {
-  transform: rotate(-90deg);
-  font-size: 2em;
-  margin-left: -80px;
-  margin-bottom: 100px;
-  display: inline-block;
-  a{
-    display: inline-flex;
-    align-items: center;
-    .dash {
-      display: inline-block;
-      height: 3px;
-      width: $base * 3;
-      background-color: $black;
-      margin: 0 $base;
-      transition: transform 1s ease;
-    }
-    &:hover {
-      .dash{
-        transform: translate(-20px, 0);
-      }
-    }
-  }
-  
+  display:none;
 }
 @media only screen and (min-width: 760px) {
   @import './breakpoints/_760.scss';

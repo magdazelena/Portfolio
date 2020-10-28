@@ -64,11 +64,16 @@
 @media only screen and (min-width: 1030px) {
   
  .about {
+   margin-left: $margin * 3;
+   .next-page {
+     margin-left: -150px;
+   }
    .mobile-more {
     display: none;
   }
    .section-title{
     right:-366px;
+    bottom: 220px;
   }
    &--texts{
    width: 100%;

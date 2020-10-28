@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 import '../style/components/about.scss';
@@ -59,6 +60,7 @@ function About(props) {
       </div>
     </div>
     <div className="mobile-more" onClick={changeDir}>{ReactHtmlParser('&LongLeftRightArrow;')}</div>
+    <div className="next-page"><Link to={`/contact`}>contact <span className="dash"></span> Next</Link></div>
   </div>
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Landing(props) {
@@ -15,6 +16,7 @@ function Landing(props) {
       My name is Magda. <br />
       I'm a frontend developer.
     </h1>
+    <div className="next-page"><Link to={`/work`}>work <span className="dash"></span> Next</Link></div>
   </div >)
 }
 export default Landing;

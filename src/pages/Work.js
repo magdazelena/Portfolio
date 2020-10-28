@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import gsap from 'gsap';
+import ReactHtmlParser from 'react-html-parser';
 import '../style/components/work.scss';
 import { getProjectsList } from '../data';
 import { Link } from 'react-router-dom';
@@ -65,7 +66,10 @@ function Work(props) {
       })}
 
     </div>
-    <div className="work-slider-switcher" onClick={newSlide}>Next</div>
+    <div className="work-slider-switcher" onClick={newSlide}>
+      Next project<span>{ReactHtmlParser("&longrightarrow;")}</span>
+    </div>
+    <div className="next-page"><Link to={`/about`}>about <span className="dash"></span> Next</Link></div>
   </div >)
 }
 export default Work;

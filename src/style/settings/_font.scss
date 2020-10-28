@@ -26,3 +26,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+@mixin gradient-text() {
+  background: linear-gradient(45deg, $light, $blue, #ff3399, $light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 20s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}

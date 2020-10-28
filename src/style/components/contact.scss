@@ -22,6 +22,7 @@
   h2 {
     font-size: 4em;
     color: $light;
+    @include gradient-text();
   }
   a {
     color: $blue;
@@ -40,5 +41,6 @@
     bottom: 421px;
   right: -533px;
  }
+
  }
 }

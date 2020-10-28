@@ -87,9 +87,22 @@
 }
 .work-slider-switcher{
   position: absolute;
-  bottom: 0;
-  left: 45%;
+  bottom: 100px;
+  left: 20%;
   color: white;
+  font-size: 3em;
+  font-family: $display;
+  cursor: pointer;
+  span {
+    display: inline-block;
+    transform: translateX(0);
+    transition: transform 1s ease;
+  }
+  &:hover {
+    span {
+      transform: translateX($base);
+    }
+  }
 }
 @media only screen and (min-width: 760px) {
   .work-single {

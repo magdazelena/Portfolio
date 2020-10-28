@@ -1,6 +1,4 @@
-@at-root {
-  $basem: $base;
-}
+
 body {
   font-size: 16px;
 }
@@ -11,5 +9,31 @@ body {
 }
 
 .next-page {
-  margin-left: -150px;
+  transform: rotate(-90deg);
+  font-size: 2em;
+  margin-left: -80px;
+  margin-bottom: 100px;
+  display: inline-block;
+  margin-left: -53px;
+    position: fixed;
+    bottom: $margin;
+    @include gradient-text();
+  a{
+    display: inline-flex;
+    align-items: center;
+    .dash {
+      display: inline-block;
+      height: 3px;
+      width: $base * 3;
+      background-color: $light;
+      margin: 0 $base;
+      transition: transform 1s ease;
+    }
+    &:hover {
+      .dash{
+        transform: translate(-20px, 0);
+      }
+    }
+  }
+  
 }
