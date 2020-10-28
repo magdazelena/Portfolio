@@ -15,11 +15,13 @@ export const getProjectsList = () => {
 }
 
 export const getProjectByID = id => {
-  let projects = loadJson();
-  let project = Object.values(projects).filter(item => {
-    return item.id === id;
+  return new Promise(resolve => {
+    let projects = loadJson();
+    let project = Object.values(projects).filter(item => {
+      return item.id === id;
+    })
+    resolve(project[0]);
   })
-  return project[0];
 }
 export const getNextProjectID = number => {
   let projects = loadJson();
