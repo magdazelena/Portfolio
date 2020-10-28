@@ -9,16 +9,16 @@
     "Bootstrap",
     "Blockchain"
   ],
-  "manchet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a feugiat augue, laoreet semper eros. Fusce accumsan turpis tempor, vehicula nibh vitae, accumsan erat. Morbi nec lacinia odio. Vivamus aliquam felis gravida sapien fermentum aliquet. Maecenas aliquet nulla eget elementum convallis. Ut porta diam pharetra venenatis sodales. Proin finibus orci at pellentesque vestibulum.\nVivamus feugiat sodales tellus eu aliquam. Morbi sit amet tempus urna. Quisque auctor odio eget eros lobortis, sit amet varius nibh suscipit. Vestibulum fringilla dolor id leo porttitor tincidunt. Sed suscipit a lorem nec lobortis. Nulla sit amet ultricies lacus. Donec at mauris ipsum. Cras porta metus eget urna ultricies, fermentum vestibulum quam volutpat. In varius ornare libero aliquet malesuada. Cras rutrum tortor sit amet ipsum congue, sed suscipit eros volutpat. Proin et metus vestibulum, consequat eros congue, vulputate tellus. Integer in lorem consectetur libero gravida mattis non eu tortor. Nulla eget ipsum nec enim laoreet feugiat sed at ex. Nam diam dolor, finibus id arcu quis, ultricies rhoncus ipsum. Mauris scelerisque pulvinar lorem, vel sagittis felis congue eget.",
+  "manchet": "iRespo was a Blockchain solution for online voting. The idea was to unsure votes security, while making the voting fast and pleasant. Blockchain solution would also enable the sets of questionnares and answers to be shareable and accessible, while keeping their integrity <br/><br/>The application was first created as a conference voting solution. Apart from asking audience the questions and having the results processed real time, auditorium could also ask speaker the questions, using voice transitting technology or simple chat system.<br/><br/>Application was build in C#/.NET with jQuery. UI was created with Bootstrap.<br/><br/>I was responsible for UX/UI design of the product, as well as full front end solution including animated graphs for data.<br/><br/>The project is no longer available.",
   "top_video": "./media/irespo/top.mp4",
   "top_image": null,
   "media": [
     {
       "type": "video",
-      "path": "./media/onoff/top.mp4",
-      "alt": "Video",
-      "caption": "Main page",
-      "description": "Bla bla bla description"
+      "path": "./media/irespo/top.mp4",
+      "alt": "Question mechanism",
+      "caption": "Asking a question mechanism",
+      "description": "User could ask a speaker a question using a simple chat solution or requesting for voice button. If the request was granted by the speaker, the user could talk to their phone as to the microphone and the voice was transmitted directly to the auditorium sound system."
     }
   ]
 }

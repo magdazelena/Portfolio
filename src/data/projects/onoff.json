@@ -6,18 +6,50 @@
   "tech": [
     "JavaScript",
     "Wordpress",
-    "CSS3 Animation"
+    "CSS3 Animation",
+    "SVG Animation"
   ],
-  "manchet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a feugiat augue, laoreet semper eros. Fusce accumsan turpis tempor, vehicula nibh vitae, accumsan erat. <br/><br/> Morbi nec lacinia odio. Vivamus aliquam felis gravida sapien fermentum aliquet. Maecenas aliquet nulla eget elementum convallis. Ut porta diam pharetra venenatis sodales. Proin finibus orci at pellentesque vestibulum.\nVivamus feugiat sodales tellus eu aliquam. Morbi sit amet tempus urna. Quisque auctor odio eget eros lobortis, sit amet varius nibh suscipit. Vestibulum fringilla dolor id leo porttitor tincidunt. Sed suscipit a lorem nec lobortis. Nulla sit amet ultricies lacus. Donec at mauris ipsum. Cras porta metus eget urna ultricies, fermentum vestibulum quam volutpat. In varius ornare libero aliquet malesuada. Cras rutrum tortor sit amet ipsum congue, sed suscipit eros volutpat. Proin et metus vestibulum, consequat eros congue, vulputate tellus. Integer in lorem consectetur libero gravida mattis non eu tortor. Nulla eget ipsum nec enim laoreet feugiat sed at ex. Nam diam dolor, finibus id arcu quis, ultricies rhoncus ipsum. Mauris scelerisque pulvinar lorem, vel sagittis felis congue eget.",
-  "top_video": "./media/onoff/top.mp4",
+  "manchet": "The project is digital portfolio of the interior design and architecture agency OnOff based in Warsaw. <br/><br/> The identity was design by <a href=''>Paulina Derecka</a> and the website is just the part of it.<br/><br/>The portfolio is a showcase of large in size and quality images, hence the technology is limited to minimum. Most of the animations are done with CSS Transitions, although lightweight sliders in JavaScript are also applied. The project uses Wordpress CMS as easy-to-use backend.",
+  "top_video": "./media/onoff/onoff_short.mp4",
   "top_image": null,
   "media": [
     {
       "type": "video",
-      "path": "./media/onoff/top.mp4",
+      "path": "./media/onoff/onoff_best.mp4",
       "alt": "Video",
-      "caption": "Main page",
-      "description": "Bla bla bla description"
+      "caption": "Overview of the landing page",
+      "description": "Landing page is an introduction to the company values and silhouttes of the architects, as well as the project categories. The animations are run when visible on viewport."
+    },
+    {
+      "type": "video",
+      "path": "./media/onoff/onoff_top.mp4",
+      "alt": "Top video",
+      "caption": "Top panorama",
+      "description": "Top section is a 360 panorama of one of the client's realisations. Due to performance reasons and limited browsers compatibility at a time for WebGL, the panorama is generated in two ways: when applicable, it is full cubical panorama, that on mobile uses the gyroscope for the navigation. When not possible, it is a lightweight mp4 video."
+    },
+    {
+      "type": "image",
+      "path": "./media/onoff/on1.jpg",
+      "alt": "Menu",
+      "caption": "Menu expanded"
+    },
+    {
+      "type": "image",
+      "path": "./media/onoff/on2.jpg",
+      "alt": "Links",
+      "caption": "Whole sections as links"
+    },
+    {
+      "type": "image",
+      "path": "./media/onoff/on3.jpg",
+      "alt": "Video clipped",
+      "caption": "Video clipped by SVG"
+    },
+    {
+      "type": "video",
+      "path": "./media/onoff/onoff_slides.mp4",
+      "alt": "Slides",
+      "caption": "Project list as a slider and particular project view"
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactHtmlParser from 'react-html-parser';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import gsap from 'gsap';
 import { getNextProjectID, getProjectByID } from '../data';
 import { useDispatch, useSelector } from 'react-redux';
@@ -80,7 +80,7 @@ function Project(props) {
           if (item.type === "video") {
             medium = <video src={`../${item.path}`} muted={true} autoPlay={true} loop />
           } else {
-            medium = <img src={item.path} alt={item.alt} />
+            medium = <img src={`../${item.path}`} alt={item.alt} />
           }
           return <div className="project-medium" key={key}>
             {medium}
