@@ -1,0 +1,48 @@
+{
+  "id": "buszmeni",
+  "number": 2,
+  "main_title": "Buszmeni Book Design Studio",
+  "title": "Buszmeni Book Design Studio",
+  "tech": [
+    "JavaScript",
+    "PHP",
+    "CSS3 Animation"
+  ],
+  "manchet": "Buszmeni is a Book Design Studio of professor Maciej Buszewicz at Academy of Fine Arts in Warsaw.<br/><br/>This project is a remake of old website done in Flash.<br/><br/>I redid the UI of the website using pure JavaScript, avoiding any libraries or dependencies. The site has been working for years and is supposed to be working for many more. Getting rid of the Flash technology made it possible to recreate the site completely responsive on mobile devices.<br/><br/>I also wrote a CMS in PHP for easy input of new student projects and management of the old ones.<br/><br/>The website address: <a href='http://buszmeni.pl/'>buszmeni.pl</a>",
+  "top_video": "./media/buszmeni/busz_intro.mp4",
+  "top_image": null,
+  "media": [
+    {
+      "type": "video",
+      "path": "./media/buszmeni/busz_load.mp4",
+      "alt": "Loading page",
+      "caption": "Page load and project view",
+      "description": "Project thumbnails get loaded asynchronously and then when loaded, animation plays. Clicking each we can see a fullscreen video of book presentation or a slider if there are any additional materials."
+    },
+    {
+      "type": "image",
+      "path": "./media/buszmeni/bu3.jpg",
+      "alt": "Menu",
+      "caption": "Top menu",
+      "description": "Apart from having the books ordered by Author, Year or Designer, in the menu user may also find a loop button that lets them play all the recordings in a loop by selected category."
+    },
+    {
+      "type": "image",
+      "path": "./media/buszmeni/bu2.jpg",
+      "alt": "Menu",
+      "caption": "Menu expanded"
+    },
+    {
+      "type": "video",
+      "path": "./media/buszmeni/busz_menu.mp4",
+      "alt": "Menu",
+      "caption": "Choosing a project from menu"
+    },
+    {
+      "type": "video",
+      "path": "./media/buszmeni/busz_slider.mp4",
+      "alt": "Slider",
+      "caption": "Projects slider"
+    }
+  ]
+}

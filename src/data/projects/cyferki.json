@@ -1,0 +1,37 @@
+{
+  "id": "cyferki",
+  "number": 3,
+  "main_title": "Digits (Cyferki)",
+  "title": "Digits (Cyferki) - technology icons portraits",
+  "tech": [
+    "jQuery",
+    "Gyroscope",
+    "Processing"
+  ],
+  "manchet": "Digits <i>Cyferki</i> is a tribute to technology female icons from the World. <br/><br/>The project is part of my master thesis on Academy of Fine Arts in Warsaw. I consisted of this website alongside a book I designed and made. <br/><br/>Digits is mostly portaits of women depicted in inspiration to technology they invented or contributed to. In example, Grace Hopper portrait, the mother of modern compilers, consists of letters and digits interlacing in a play between abstract and vision. The portraits were prepared using Processing and then recorded as videos for the website.<br/><br/>The texts on the page are shuffled using jQuery or appear on efemeral screens user needs to discover. The screens float with mouse moves or gyroscope moves on mobile devices.<br/><br/>The project came to life in 2016 and is currently in the works of being rewritten to p5.js and React.",
+  "top_video": null,
+  "top_image": "../media/cyferki/wiz5.jpg",
+  "media": [
+    {
+      "type": "video",
+      "path": "./media/cyferki/cyferki.mp4",
+      "alt": "Cyferki page",
+      "caption": "The project recording"
+    },
+    {
+      "type": "image",
+      "path": "./media/cyferki/wiz1.jpg",
+      "alt": "Visual"
+    },
+    {
+      "type": "image",
+      "path": "./media/cyferki/wiz4.jpg",
+      "alt": "Visual"
+    },
+    {
+      "type": "image",
+      "path": "./media/cyferki/wiz6.jpg",
+      "alt": "Visual"
+    }
+  ]
+}
