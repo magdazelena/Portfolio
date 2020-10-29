@@ -2,14 +2,14 @@
   "id": "onoff",
   "number": 1,
   "main_title": "OnOff Architects",
-  "title": "OnOff Architects",
+  "title": "OnOff Architects portfolio",
   "tech": [
     "JavaScript",
     "Wordpress",
     "CSS3 Animation",
     "SVG Animation"
   ],
-  "manchet": "The project is digital portfolio of the interior design and architecture agency OnOff based in Warsaw. <br/><br/> The identity was design by <a href=''>Paulina Derecka</a> and the website is just the part of it.<br/><br/>The portfolio is a showcase of large in size and quality images, hence the technology is limited to minimum. Most of the animations are done with CSS Transitions, although lightweight sliders in JavaScript are also applied. The project uses Wordpress CMS as easy-to-use backend.",
+  "manchet": "The project is digital portfolio of the interior design and architecture agency OnOff based in Warsaw. <br/><br/> The identity was design by <a href=''>Paulina Derecka</a> and the website is just the part of it.<br/><br/>The portfolio is a showcase of large in size and quality images, hence the technology is limited to minimum. Most of the animations are done with CSS Transitions, although lightweight sliders in JavaScript are also applied. The project uses Wordpress CMS as easy-to-use backend.<br/><br/>You can visit the project: <a href='https://onoffarchitekci.com'>onoffarchitekci.com</a>",
   "top_video": "./media/onoff/onoff_short.mp4",
   "top_image": null,
   "media": [

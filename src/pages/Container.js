@@ -31,7 +31,7 @@ function Container({ location, setBackgroundLocation }) {
       if (e.touches) {
         isScrollingDown = initPos > e.changedTouches[0].clientY;
       } else {
-        isScrollingDown = Math.sign(e.wheelDeltaY) < 0;
+        isScrollingDown = Math.sign(e.deltaY) < 0;
       }
       if (isScrollingDown) {
         if (currentIndex < routes.length - 1 && currentIndex >= 0) {
@@ -57,11 +57,11 @@ function Container({ location, setBackgroundLocation }) {
     const getInitTouch = e => {
       initPos = e.touches[0].clientY;
     }
-    window.addEventListener('mousewheel', onWheel);
+    window.addEventListener('wheel', onWheel);
     window.addEventListener('touchstart', getInitTouch)
     window.addEventListener('touchmove', onWheel);
     return () => {
-      window.removeEventListener('mousewheel', onWheel);
+      window.removeEventListener('wheel', onWheel);
       window.removeEventListener('touchmove', onWheel);
       window.removeEventListener('touchstart', getInitTouch);
     }

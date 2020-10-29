@@ -21,7 +21,6 @@ function Background(props) {
   }, [props.isForeground]);
 
   useEffect(() => {
-    console.log(props.location)
     setLocation(props.location);
   }, [props.location]);
 

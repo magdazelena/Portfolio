@@ -72,21 +72,20 @@
     display: none;
   }
    .section-title{
-    right:-366px;
+    right:-236px;
     bottom: 220px;
   }
    &--texts{
    width: 100%;
    overflow: hidden;
     font-size: 1.3em;
-    line-height: 1.6em;
     h2 {
       font-family: $display;
       color: $light;
     }
   }
   &--description{
-    width: 40%;
+    width: 65%;
     margin-right: $margin * 3;
   }
   &--tech {
