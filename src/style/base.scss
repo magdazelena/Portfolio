@@ -223,6 +223,10 @@ section.route-section, .section {
 .next-page {
   display:none;
 }
+.cookiePrompt {
+  transform: translateY(150vh);
+
+}
 @media only screen and (min-width: 760px) {
   @import './breakpoints/_760.scss';
 }

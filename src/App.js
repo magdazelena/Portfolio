@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Background from './components/Background';
+import CookiePrompt from './components/CookiePrompt';
 import Header from './components/Header';
 import Container from './pages/Container';
 
@@ -12,6 +13,7 @@ function App() {
       <Background isForeground={navStatus} location={location} />
       <Header setNavStatus={setNavStatus} />
       <Container setBackgroundLocation={setLocation} />
+      <CookiePrompt />
     </div>
   );
 }
