@@ -46,23 +46,24 @@ function Work(props) {
         } else {
           topImage = (<video src={item.top_video} muted={true} autoPlay={true} loop />)
         }
-        return (<div className={`work-single ${slide === key ? 'slide-active' : 'slide'}`} key={key}>
-          <div className="work-image">{topImage}</div>
-          <div className="work-texts">
-            <div className="work-title">
-              <h2>{item.main_title}</h2>
-              <p className="caption">
-                {item.tech.map((tec, key) => {
-                  return <span key={key}>{tec}</span>
-                })}
-              </p>
+        return (<Link
+          to={`./project/${item.id}`}>
+          <div className={`work-single ${slide === key ? 'slide-active' : 'slide'}`} key={key}>
+            <div className="work-image">{topImage}</div>
+            <div className="work-texts">
+              <div className="work-title">
+                <h2>{item.main_title}</h2>
+                <p className="caption">
+                  {item.tech.map((tec, key) => {
+                    return <span key={key}>{tec}</span>
+                  })}
+                </p>
+              </div>
+              <span className="headline">0{item.number} See more</span>
             </div>
-            <Link
-              to={`./project/${item.id}`}
-              className="headline">0{item.number} See more</Link>
-          </div>
 
-        </div>)
+          </div>
+        </Link>)
       })}
 
     </div>

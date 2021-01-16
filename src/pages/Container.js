@@ -31,7 +31,7 @@ function Container({ location, setBackgroundLocation }) {
       if (e.touches) {
         isScrollingDown = initPos > e.changedTouches[0].clientY;
       } else {
-        isScrollingDown = Math.sign(e.deltaY) < 0;
+        isScrollingDown = Math.sign(e.deltaY) > 0;
       }
       if (isScrollingDown) {
         if (currentIndex < routes.length - 1 && currentIndex >= 0) {
