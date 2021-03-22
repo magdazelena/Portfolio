@@ -23,7 +23,7 @@
     "redux": "^4.0.5",
     "save": "^2.4.0",
     "simplex-noise": "^2.4.0",
-    "three": "^0.121.1"
+    "three": "^0.125.0"
   },
   "scripts": {
     "start": "react-scripts start",
